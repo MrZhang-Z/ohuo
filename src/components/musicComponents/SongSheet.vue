@@ -1,8 +1,8 @@
 <template>
-  <div class="song-sheet-box p-in-5">
+  <div class="song-sheet-box">
     <div class="song-img-box pointer">
       <img class="song-img" :src="musicImg" alt="">
-      <div class="mask">
+      <div class="mask" ref="mask">
         <VideoPlay class="play-icon fc-fff" />
       </div>
     </div>
@@ -19,11 +19,19 @@ import musicImg from '@/assets/images/600.png'
 export default defineComponent({
   // 歌单组件
   name: 'SongSheet',
-  components: {},
-  props: {},
   setup() {
     return { musicImg };
   },
+  methods: {
+    mouseOver() {
+      let mask = this.$refs['mask'] as HTMLElement
+      mask.style.display = 'block'
+    },
+    mouseOut() {
+      let mask = this.$refs['mask'] as HTMLElement
+      mask.style.display = 'none'
+    }
+  }
 });
 </script>
 <style scoped lang='scss'>
@@ -39,27 +47,38 @@ export default defineComponent({
     .song-img {
       width: 100%;
       height: 100%;
-      transition: all .3s;
-    }
-
-    .song-img:hover {
-      transform: scale(1.1);
+      transition: all .5s;
     }
 
     .mask {
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0);
       position: absolute;
       top: 0;
       left: 0;
-      display: none;
+      transition: all .5s;
 
       .play-icon {
         width: 50px;
         height: 50px;
         margin: 75px 75px;
+        color: rgba(0, 0, 0, 0)
       }
+    }
+
+    .mask:hover {
+      background-color: rgba(0, 0, 0, 0.3);
+
+      .play-icon {
+        color: rgba(255, 255, 255, 1)
+      }
+    }
+  }
+
+  .song-img-box:hover {
+    .song-img {
+      transform: scale(1.1);
     }
   }
 
