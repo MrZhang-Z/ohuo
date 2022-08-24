@@ -2,12 +2,12 @@
   <div class="big-input-box w-100 flex-row">
     <label class="label fc-333" v-show="label.length">{{ label }}</label>
     <div class="input-box flex-row">
-      <div class="icon icon-left">
-        <slot name="first"></slot>
+      <div class="icon left-icon">
+        <slot name="prefix-icon"></slot>
       </div>
-      <input class="input fs-16" :type="type" :disabled="disabled">
-      <div class="icon icon-right">
-        <slot name="end"></slot>
+      <input class="input fs-16" :type="type" :value="modelValue" :disabled="disabled" @input="onInput">
+      <div class="icon right-icon">
+        <slot name="suffix-icon"></slot>
       </div>
     </div>
   </div>
@@ -17,6 +17,10 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   name: 'Input',
   props: {
+    modelValue: {
+      type: String || Number,
+      default: ''
+    },
     label: {
       type: String,
       default: ''
@@ -30,16 +34,23 @@ export default defineComponent({
       default: false
     }
   },
-  setup() {
+  setup(props, { emit }) {
+    function onInput(event: Event) {
+      // 类型断言     断定event.target一定是html input标签   不然不能点value
+      let input = (event.target as HTMLInputElement).value
+      if (props.modelValue !== input) {
+        // 发送事件 此时父组件会监听到
+        emit('update:modelValue', input)
+      }
+    }
 
     return {
+      onInput
     };
   },
 });
 </script>
 <style scoped lang='scss'>
-
-
 .big-input-box {
   height: 100%;
   position: relative;
@@ -80,13 +91,15 @@ export default defineComponent({
       line-height: 30px;
       position: absolute;
       top: 3px;
+      width: 16px;
+      color: #999999;
     }
 
-    .icon-left {
+    .left-icon {
       left: 18px;
     }
 
-    .icon-right {
+    .right-icon {
       right: 18px;
     }
   }

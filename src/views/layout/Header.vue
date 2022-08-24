@@ -15,11 +15,8 @@
     <!-- 搜索框 -->
     <div class="search-box">
       <Input :disabled="false">
-      <template v-slot:first>
-        <User class="small-icon" />
-      </template>
-      <template v-slot:end>
-        <Search class="small-icon" />
+      <template #suffix-icon>
+        <Search />
       </template>
       </Input>
     </div>
@@ -36,15 +33,16 @@ import logo from '@/assets/images/logo.png'
 import avatar from '@/assets/images/avatar.png'
 
 // 引入组件
-import Input from '@/components/Input.vue'
+import Input from '@/components/publicComponents/Input.vue'
 export default defineComponent({
   name: 'Header',
   components: { Input },
   props: {},
   setup() {
+
     return {
       logo,
-      avatar
+      avatar,
     };
   },
 });
