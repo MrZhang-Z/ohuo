@@ -22,26 +22,17 @@ export default defineComponent({
   setup() {
     return { musicImg };
   },
-  methods: {
-    mouseOver() {
-      let mask = this.$refs['mask'] as HTMLElement
-      mask.style.display = 'block'
-    },
-    mouseOut() {
-      let mask = this.$refs['mask'] as HTMLElement
-      mask.style.display = 'none'
-    }
-  }
 });
 </script>
 <style scoped lang='scss'>
 .song-sheet-box {
-  width: 200px;
+  width: 220px;
+  margin-right: 25px;
 
   .song-img-box {
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     overflow: hidden;
 
     .song-img {
@@ -62,13 +53,13 @@ export default defineComponent({
       .play-icon {
         width: 50px;
         height: 50px;
-        margin: 75px 75px;
+        margin: 85px 85px;
         color: rgba(0, 0, 0, 0)
       }
     }
 
     .mask:hover {
-      background-color: rgba(0, 0, 0, 0.3);
+      background-color: rgba(0, 0, 0, 0.2);
 
       .play-icon {
         color: rgba(255, 255, 255, 1)
@@ -89,5 +80,9 @@ export default defineComponent({
   .title:hover {
     color: #158bb8;
   }
+}
+
+.song-sheet-box:nth-child(5n) {
+  margin-right: 0;
 }
 </style>
