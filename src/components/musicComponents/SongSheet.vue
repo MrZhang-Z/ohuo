@@ -7,7 +7,7 @@
       </div>
     </div>
     <div>
-      <p class="title fs-14 fc-333 m-tb-5 pointer">摘下相思豆，熬成细绵粥</p>
+      <p class="song-sheet-title fs-14 fc-333 m-tb-5 pointer">摘下相思豆，熬成细绵粥</p>
       <p class="fs-14 fc-999">播放量：29.2 万</p>
     </div>
   </div>
@@ -73,11 +73,11 @@ export default defineComponent({
     }
   }
 
-  .title {
+  .song-sheet-title {
     white-space: pre-wrap;
   }
 
-  .title:hover {
+  .song-sheet-title:hover {
     color: #158bb8;
   }
 }
