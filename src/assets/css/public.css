@@ -265,6 +265,12 @@
   flex-direction: column;
 }
 
+.flex-col-wrap {
+  display       : flex;
+  flex-direction: column;
+  flex-wrap     : wrap;
+}
+
 .jfc-sb {
   justify-content: space-between;
 }
