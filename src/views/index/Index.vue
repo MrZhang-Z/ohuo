@@ -45,8 +45,8 @@ import { defineComponent } from 'vue';
 // 引入组件
 import SongSheet from '@/components/musicComponents/SongSheet.vue'
 import NewSong from '@/components/musicComponents/NewSong.vue'
-import Carousel from '@/components/publicComponents/Carousel.vue'
-import CarouselItem from '@/components/publicComponents/CarouselItem.vue'
+import Carousel from '@/components/publicComponents/Carousel/Carousel.vue'
+import CarouselItem from '@/components/publicComponents/Carousel/CarouselItem.vue'
 export default defineComponent({
   name: 'Home',
   components: {
