@@ -111,6 +111,10 @@
   margin-right: 10px;
 }
 
+.m-l-10 {
+  margin-left: 10px;
+}
+
 .m-lr-15 {
   margin-left : 15px;
   margin-right: 15px;
@@ -225,6 +229,10 @@
 /* 主题色 */
 .bg-theme-color {
   background-color: #158bb8;
+}
+
+.bg-light-theme-color {
+  background-color: rgba(44, 150, 191, 0.1);
 }
 
 /* 圆角 */
