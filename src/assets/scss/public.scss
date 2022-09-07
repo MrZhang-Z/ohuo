@@ -1,3 +1,7 @@
+$bg-theme-color: #158bb8;
+$bg-light50-theme-color: #8ac5db;
+$bg-light-theme-color : #e9f4f8;
+
 /* 宽 */
 .w-100 {
   width: 100%;
@@ -228,11 +232,15 @@
 
 /* 主题色 */
 .bg-theme-color {
-  background-color: #158bb8;
+  background-color: $bg-theme-color;
+}
+
+.bg-light50-theme-color {
+  background-color: $bg-light50-theme-color;
 }
 
 .bg-light-theme-color {
-  background-color: rgba(44, 150, 191, 0.1);
+  background-color: $bg-light-theme-color;
 }
 
 /* 圆角 */
