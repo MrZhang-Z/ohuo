@@ -48,7 +48,7 @@ export default defineComponent({
     display: block;
     text-align: center;
     position: absolute;
-    top: -40px;
+    top: -48px;
     background-color: #505155;
     color: #ffffff;
     padding: 8px;
@@ -57,6 +57,7 @@ export default defineComponent({
     transform: translateX(-50%);
     font-size: 12px;
     white-space: nowrap;
+    z-index: 999;
   }
 
   .tip-show::before {
