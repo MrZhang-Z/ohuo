@@ -1,5 +1,12 @@
 const port = 8888;
 module.exports = {
+  css: {
+    loaderOptions: {
+      sass: {
+        prependData: `@import "@/assets/css/public.scss";` //引入全局变量   
+      }
+    }
+  },
   devServer: {
     port,
     open: true,
