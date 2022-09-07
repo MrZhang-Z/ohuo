@@ -2,8 +2,6 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 
-// 引入public.css
-import '@/assets/css/public.css'
 // 引入element-plus 图标
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 
