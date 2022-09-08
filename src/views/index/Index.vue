@@ -42,6 +42,9 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { storeToRefs } from 'pinia'
+// 状态
+import { useUserStore } from '@/store/user'
 // 引入组件
 import SongSheet from '@/components/musicComponents/SongSheet.vue'
 import NewSong from '@/components/musicComponents/NewSong.vue'
@@ -56,6 +59,10 @@ export default defineComponent({
     CarouselItem
   },
   setup() {
+    const store = useUserStore()
+    const { userInfo } = storeToRefs(store)
+    console.log(userInfo);
+
     type dataType = {
       index: number;
       name: string;
@@ -148,7 +155,7 @@ export default defineComponent({
       ],
     ];
 
-    return { data };
+    return { data, userInfo };
   }
 });
 </script>
