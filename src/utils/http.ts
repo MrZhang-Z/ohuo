@@ -6,7 +6,8 @@ import axios, { AxiosInstance, AxiosError, AxiosRequestConfig, AxiosResponse } f
 interface Result {
   code: number;
   msg: string;
-  tags: unknown
+  tags: unknown,
+  unikey: string
 }
 
 // 请求响应参数，包含data
@@ -73,11 +74,11 @@ class RequestHttp {
           return Promise.reject(data);
         }
         // 全局错误信息拦截（防止下载文件得时候返回数据流，没有code，直接报错）
-        if (data.code && data.code !== RequestEnums.SUCCESS) {
-          // ElMessage.error(data); // 此处也可以使用组件提示报错信息
-          alert(data)
-          return Promise.reject(data)
-        }
+        /*  if (data.code && data.code !== RequestEnums.SUCCESS) {
+           // ElMessage.error(data); // 此处也可以使用组件提示报错信息
+           alert(data)
+           return Promise.reject(data)
+         } */
 
 
         const a = JSON.stringify(data)
