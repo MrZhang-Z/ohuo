@@ -3,7 +3,7 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        prependData: `@import "@/assets/css/public.scss";` //引入全局变量   
+        prependData: `@import "@/assets/scss/public.scss";` //引入全局变量   
       }
     }
   },
