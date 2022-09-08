@@ -17,12 +17,12 @@
 </template>
 <script lang='ts'>
 import { defineComponent } from 'vue';
+import { storeToRefs } from 'pinia'
 // 引入图片
 import musicImg from '@/assets/images/600.png'
+// 状态
+import { useUserStore } from '@/store/user'
 export default defineComponent({
-  name: '',
-  components: {},
-  props: {},
   setup() {
     return { musicImg };
   },
